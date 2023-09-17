@@ -1,7 +1,14 @@
 import 'package:flutter/material.dart';
 
-class NavBottomBar extends StatelessWidget {
-  const NavBottomBar({super.key});
+class BottomNavBar extends StatelessWidget {
+  const BottomNavBar({
+    required this.currentIndex,
+    required this.onTap,
+    super.key,
+  });
+
+  final int currentIndex;
+  final ValueSetter<int> onTap;
 
   @override
   Widget build(BuildContext context) {
@@ -20,6 +27,8 @@ class NavBottomBar extends StatelessWidget {
         BottomNavigationBarItem(icon: Icon(Icons.message_rounded), label: "Сообщения"),
         BottomNavigationBarItem(icon: Icon(Icons.account_box_rounded), label: "Кабинет"),
       ],
+      currentIndex: currentIndex,
+      onTap: onTap,
     );
   }
 }

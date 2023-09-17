@@ -20,6 +20,33 @@ class ItemPage extends StatelessWidget {
           backgroundColor: Colors.transparent,
           elevation: 0,
         ),
+        bottomSheet: Row(
+          children: [
+            const SizedBox(width: 16.0),
+            Expanded(
+              child: ElevatedButton(
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: Colors.blue.shade400,
+                  foregroundColor: Colors.white,
+                ),
+                onPressed: () {},
+                child: const Text("Написать"),
+              ),
+            ),
+            const SizedBox(width: 16.0),
+            Expanded(
+              child: ElevatedButton(
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: Colors.green.shade400,
+                  foregroundColor: Colors.white,
+                ),
+                onPressed: () {},
+                child: const Text("Позвонить"),
+              ),
+            ),
+            const SizedBox(width: 16.0),
+          ],
+        ),
         body: SingleChildScrollView(
           physics: const ClampingScrollPhysics(),
           child: Column(

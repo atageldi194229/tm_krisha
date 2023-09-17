@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:tm_krisha/splash/splash.dart';
@@ -32,7 +33,15 @@ class AppView extends StatelessWidget {
       useMaterial3: true,
     );
 
-    defaultTheme = defaultTheme.copyWith(textTheme: GoogleFonts.ubuntuTextTheme(defaultTheme.textTheme));
+    defaultTheme = defaultTheme.copyWith(
+      textTheme: GoogleFonts.ubuntuTextTheme(defaultTheme.textTheme),
+      appBarTheme: defaultTheme.appBarTheme.copyWith(
+        systemOverlayStyle: const SystemUiOverlayStyle(statusBarColor: Colors.orangeAccent),
+      ),
+      bottomSheetTheme: defaultTheme.bottomSheetTheme.copyWith(
+        surfaceTintColor: Colors.transparent,
+      ),
+    );
 
     return MaterialApp(
       debugShowCheckedModeBanner: false,

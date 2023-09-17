@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'dart:math' as math;
 
+import 'package:tm_krisha/item_list/item_list.dart';
+
 class CategoriesPage extends StatelessWidget {
   const CategoriesPage({super.key, this.categoryType = CategoryType.sell});
 
@@ -27,24 +29,24 @@ class CategoriesView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final categoriesForSell = [
-      "квартиру",
-      "дом",
-      "дачу",
-      "участок",
-      "коммерческую недвижимость",
-      "бизнес",
-      "промбазы и заводы",
-      "прочую недвижимость",
+      "Квартиру",
+      "Дом",
+      "Дачу",
+      "Участок",
+      "Коммерческую недвижимость",
+      "Бизнес",
+      "Промбазы и заводы",
+      "Прочую недвижимость",
     ];
 
     final categoriesForRent = [
-      "квартиру",
-      "дом",
-      "комнату",
-      "дачу",
-      "коммерческую недвижимость",
-      "промбазы и заводы",
-      "прочую недвижимость",
+      "Квартиру",
+      "Дом",
+      "Комнату",
+      "Дачу",
+      "Коммерческую недвижимость",
+      "Промбазы и заводы",
+      "Прочую недвижимость",
     ];
 
     return Scaffold(
@@ -70,7 +72,9 @@ class CategoriesView extends StatelessWidget {
                     shrinkWrap: true,
                     itemCount: categoriesForSell.length,
                     itemBuilder: (_, index) => ListTile(
-                      onTap: () {},
+                      onTap: () {
+                        Navigator.of(context).push(ItemListPage.route(title: categoriesForSell[index]));
+                      },
                       tileColor: Colors.white,
                       title: Text(categoriesForSell[index]),
                       trailing: Row(
@@ -87,7 +91,9 @@ class CategoriesView extends StatelessWidget {
                     shrinkWrap: true,
                     itemCount: categoriesForRent.length,
                     itemBuilder: (_, index) => ListTile(
-                      onTap: () {},
+                      onTap: () {
+                        Navigator.of(context).push(ItemListPage.route(title: categoriesForRent[index]));
+                      },
                       tileColor: Colors.white,
                       title: Text(categoriesForRent[index]),
                       trailing: Row(

@@ -10,7 +10,7 @@ void main() {
   // );
 
   SystemChrome.setSystemUIOverlayStyle(const SystemUiOverlayStyle(
-    // statusBarColor: Colors.pink, // status bar color
+    statusBarColor: Colors.orangeAccent, // status bar color
     statusBarBrightness: Brightness.light,
     statusBarIconBrightness: Brightness.dark,
   ));
